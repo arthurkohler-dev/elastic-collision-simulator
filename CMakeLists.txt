@@ -16,4 +16,4 @@ target_include_directories(elastic_collision_sim PRIVATE
 )
 
 target_link_libraries(elastic_collision_sim PRIVATE ${SDL2_LIBRARIES})
-
+target_link_libraries(elastic_collision_sim PRIVATE SDL2::SDL2 m)

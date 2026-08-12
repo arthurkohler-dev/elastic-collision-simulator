@@ -1,6 +1,8 @@
 #include "sim.h"
 #include <stdio.h>
 
+Body body;
+
 bool sim_init(Sim* sim, const char* title, int width, int height) {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         printf("Erro SDL: %s\n", SDL_GetError());
@@ -14,6 +16,9 @@ bool sim_init(Sim* sim, const char* title, int width, int height) {
     if (!sim->renderer) return false;
 
     sim->is_running = true;
+    
+    body = create_body();
+
     return true;
 }
 
@@ -29,6 +34,10 @@ void sim_handle_events(Sim* sim) {
 void sim_render(Sim* sim) {
     SDL_SetRenderDrawColor(sim->renderer, 0, 0, 0, 255);
     SDL_RenderClear(sim->renderer);
+    
+    SDL_SetRenderDrawColor(sim->renderer, 255, 0, 0, 255);
+    render_body(sim->renderer, body);
+
     SDL_RenderPresent(sim->renderer);
 }
 
