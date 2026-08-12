@@ -11,7 +11,7 @@ typedef struct {
     bool is_running;
 } Sim;
 
-bool sim_init(Sim* sim, const char* title, int width, int height);
+bool sim_init(Sim* sim, const char* title, int16_t width, int16_t height);
 void sim_handle_events(Sim* sim);
 void sim_render(Sim* sim);
 void sim_clean(Sim* sim);

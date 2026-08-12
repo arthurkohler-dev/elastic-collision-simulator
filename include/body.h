@@ -25,6 +25,8 @@ typedef struct {
 Body create_body();
 void destroy_body();
 void render_body(SDL_Renderer* renderer, Body body);
+Body* gen_bodies(int16_t n_bodies, int16_t win_width, int16_t win_height);
+void render_bodies(SDL_Renderer* renderer, Body* bodies, int16_t n_bodies);
 
 #endif
 
