@@ -1,9 +1,7 @@
 #include "sim.h"
 #include <stdlib.h>
 #include <time.h>
-
-#define WIN_WIDTH 1200
-#define WIN_HEIGHT 1000
+#include "config.h"
 
 int main(int argc, char* argv[]) {
     Sim sim;
